@@ -58,14 +58,14 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 48px;
+  min-height: 60px;
 }
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12.5px;
   color: var(--ink);
-  font-size: 15px;
+  font-size: 18.75px;
   font-weight: 850;
   text-decoration: none;
 }
@@ -251,8 +251,8 @@ button {
   position: absolute;
   z-index: 0;
   bottom: 5%;
-  left: -45%;
-  width: 190%;
+  left: 14%;
+  width: 72%;
   height: 18px;
   border-radius: 50%;
   background: rgb(185 77 27 / 13%);
@@ -668,18 +668,14 @@ button {
 
 @keyframes potato-dance {
   0%,
+  70%,
   100% {
     transform: translateY(0) rotate(-3deg);
   }
-  25% {
-    transform: translateY(-9px) rotate(3deg);
-  }
-  50% {
-    transform: translateY(0) rotate(-2deg);
-  }
-  75% {
-    transform: translateY(-7px) rotate(4deg);
-  }
+  76% { transform: translateY(-16px) rotate(2deg); }
+  82% { transform: translateY(-52px) rotate(-2deg); }
+  88% { transform: translateY(-8px) rotate(2deg); }
+  93% { transform: translateY(0) rotate(-2deg); }
 }
 @keyframes potato-groove {
   from {
@@ -795,23 +791,28 @@ button {
 
 /* Keep the main game controls together in the desktop viewport. */
 .home-shell {
-  width: min(100% - 40px, 1600px);
+  width: calc(100% - 40px);
 }
 .brand-mark {
-  width: 50px;
-  height: 46px;
+  width: 62.5px;
+  height: 57.5px;
   overflow: visible;
   background: transparent;
 }
 .brand-potato {
   display: block;
-  width: 50px;
-  height: 46px;
+  width: 62.5px;
+  height: 57.5px;
   animation: none;
+}
+.topbar .quiet-button {
+  min-height: 55px;
+  padding-inline: 17.5px;
+  font-size: 16.25px;
 }
 .dashboard-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.65fr);
+  grid-template-columns: minmax(0, 1.75fr) minmax(260px, 0.5fr);
   gap: 16px;
   min-height: 0;
 }
@@ -859,36 +860,49 @@ button {
   margin-top: 4px;
 }
 .dashboard-layout .hero-art {
+  width: 100%;
   min-height: clamp(340px, 44vh, 500px);
 }
 .dashboard-layout .potato-main {
-  width: min(520px, 100%);
+  width: min(465px, 30%);
+  align-self: end;
 }
 .dashboard-layout .potato-main .potato-art {
   width: 100%;
 }
 .dashboard-layout .potato-friend {
   position: absolute;
-  bottom: 0%;
-  width: min(468px, 90%);
+  bottom: 0;
+  width: min(419px, 27%);
   flex: none;
 }
 .dashboard-layout .potato-friend-left,
 .dashboard-layout .potato-friend-right {
-  width: min(468px, 90%);
+  width: min(419px, 27%);
 }
 .dashboard-layout .potato-friend-left {
-  left: -75%;
+  left: 12.5%;
 }
 .dashboard-layout .potato-friend-right {
-  right: -75%;
+  right: 12.5%;
 }
 .dashboard-layout .potato-friend .friend-potato {
   width: 100%;
 }
+.dashboard-layout .potato-art.is-dancing {
+  animation: potato-dance 4.8s ease-in-out infinite;
+}
+.dashboard-layout .potato-friend-left .friend-potato.is-dancing {
+  animation-duration: 5.3s;
+  animation-delay: -2.1s;
+}
+.dashboard-layout .potato-friend-right .friend-potato.is-dancing {
+  animation-duration: 4.2s;
+  animation-delay: -0.9s;
+}
 .dashboard-layout .music-card,
 .dashboard-layout .challenge-card {
-  padding: 18px;
+  padding: 12px;
 }
 .music-controls .track-select {
   width: 100%;
@@ -1205,7 +1219,7 @@ button {
     overflow: hidden;
   }
   .topbar {
-    flex: 0 0 48px;
+    flex: 0 0 60px;
   }
   .dashboard-layout {
     flex: 1;
@@ -1218,7 +1232,7 @@ button {
     padding-bottom: 10px;
   }
   .topbar {
-    flex-basis: 42px;
+    flex-basis: 52.5px;
   }
   .dashboard-layout {
     margin-top: 8px;
@@ -1238,7 +1252,7 @@ button {
   }
   .dashboard-layout .music-card,
   .dashboard-layout .challenge-card {
-    padding: 14px;
+    padding: 12px;
   }
   .dashboard-layout .challenge-list {
     max-height: 20vh;
@@ -1246,7 +1260,7 @@ button {
 }
 @media (max-width: 999px) {
   .home-shell {
-    width: min(100% - 32px, 720px);
+    width: calc(100% - 32px);
   }
   .dashboard-layout {
     grid-template-columns: 1fr;
@@ -1348,7 +1362,7 @@ button {
     padding-bottom: 10px;
   }
   .topbar {
-    min-height: 42px;
+    min-height: 52.5px;
   }
   .dashboard-layout {
     gap: 10px;
@@ -1375,13 +1389,5 @@ button {
   .upload-button,
   .remove-track-button {
     min-height: 42px;
-  }
-}
-@media (min-width: 1700px) {
-  .home-shell {
-    width: min(calc(80% - 32px), 1600px);
-    height: 80dvh;
-    padding: 9.6px 0 12.8px;
-    zoom: 1.25;
   }
 }
