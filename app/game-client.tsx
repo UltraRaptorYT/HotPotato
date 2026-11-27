@@ -20,6 +20,46 @@ const DEFAULT_CHALLENGES: Challenge[] = [
     done: false,
   },
   {
+    id: "interesting-about-yourself",
+    text: "What is something interesting about yourself?",
+    done: false,
+  },
+  {
+    id: "similar-interest",
+    text: "Who in the group shares a similar interest as you?",
+    done: false,
+  },
+  {
+    id: "favorite-hobby",
+    text: "What is a hobby you enjoy?",
+    done: false,
+  },
+  {
+    id: "learn-something-new",
+    text: "What is something new you would like to learn?",
+    done: false,
+  },
+  {
+    id: "makes-you-smile",
+    text: "What is one small thing that always makes you smile?",
+    done: false,
+  },
+  {
+    id: "free-day",
+    text: "What is your favorite way to spend a free day?",
+    done: false,
+  },
+  {
+    id: "dream-destination",
+    text: "What is a place you would love to visit?",
+    done: false,
+  },
+  {
+    id: "proud-of",
+    text: "What is something you are proud of?",
+    done: false,
+  },
+  {
     id: "chant-wisdom",
     text: 'Chant "Om Ara Pa Cha Na Di" 7 times.',
     done: false,
@@ -57,7 +97,7 @@ const DEFAULT_CHALLENGES: Challenge[] = [
 ];
 
 const CHALLENGE_STORAGE_KEY = "hot-potato-challenges-v1";
-const CHALLENGE_MIGRATION_KEY = "hot-potato-challenges-migrated-v3";
+const CHALLENGE_MIGRATION_KEY = "hot-potato-challenges-migrated-v5";
 const REMOVED_TRACK_STORAGE_KEY = "hot-potato-removed-tracks-v1";
 const MIN_PAUSE_SECONDS = 8;
 const MAX_PAUSE_SECONDS = 24;
